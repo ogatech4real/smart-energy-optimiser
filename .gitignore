@@ -1,18 +1,22 @@
-# Build and Release Folders
-bin-debug/
-bin-release/
-[Oo]bj/
-[Bb]in/
+# Streamlit secret config
+.streamlit/secrets.toml
 
-# Other files and folders
-.settings/
+# Python cache and environment
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+env/
+venv/
+.env
 
-# Executables
-*.swf
-*.air
-*.ipa
-*.apk
+# VS Code/IDE files
+.vscode/
+.idea/
 
-# Project files, i.e. `.project`, `.actionScriptProperties` and `.flexProperties`
-# should NOT be excluded as they contain compiler settings and other important
-# information for Eclipse / Flash Builder.
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Jupyter checkpoints (if any)
+.ipynb_checkpoints/
