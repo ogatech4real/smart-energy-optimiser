@@ -32,3 +32,15 @@ scikit-learn==1.5.0
 # Dev & Linting (optional, for CI/CD pipeline)
 flake8==7.0.0
 pytest==8.2.1
+
+pip>=24.0
+
+# Core Web App Framework
+streamlit==1.35.0
+
+# Plotly for interactive visualizations
+plotly==5.18.0
+
+# Data Parsing & Processing
+pandas==2.2.2
+numpy==1.26.4
