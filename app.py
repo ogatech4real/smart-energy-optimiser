@@ -23,7 +23,7 @@ def get_mongo_client():
         return None
 ################---Definition of Variable----#############
 @st.cache_data
-def load_cities(filepath=r"https://github.com/ogatech4real/smart-energy-optimiser/blob/main/worldcities.csv", limit=5000):
+def load_cities(filepath="https://raw.githubusercontent.com/ogatech4real/smart-energy-optimiser/main/worldcities.csv", limit=5000):
     try:
         df = pd.read_csv(filepath, encoding="utf-8", on_bad_lines='skip')
     except UnicodeDecodeError:
@@ -31,6 +31,13 @@ def load_cities(filepath=r"https://github.com/ogatech4real/smart-energy-optimise
     except pd.errors.ParserError:
         st.error("🚨 Error parsing the cities CSV file. Some rows were skipped due to malformed structure.")
         st.stop()
+
+    # Validate required columns
+    required_columns = {'city', 'iso2', 'population'}
+    if not required_columns.issubset(df.columns):
+        st.error(f"❌ CSV is missing required columns: {required_columns - set(df.columns)}")
+        st.stop()
+
     df_sorted = df.sort_values(by="population", ascending=False).head(limit)
     df_sorted["display_name"] = df_sorted["city"].str.strip() + ", " + df_sorted["iso2"].str.strip()
     return df_sorted
