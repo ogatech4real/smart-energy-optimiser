@@ -23,7 +23,7 @@ def get_mongo_client():
         return None
 ################---Definition of Variable----#############
 @st.cache_data
-def load_cities(filepath=r"C:\Users\CGX\OneDrive - Teesside University\Desktop\smart_energy_db\worldcities.csv", limit=5000):
+def load_cities(filepath=r"https://github.com/ogatech4real/smart-energy-optimiser/blob/main/worldcities.csv", limit=5000):
     try:
         df = pd.read_csv(filepath, encoding="utf-8")
     except UnicodeDecodeError:
