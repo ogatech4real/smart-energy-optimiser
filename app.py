@@ -121,8 +121,8 @@ def log_ai_decision(input_summary, recommendation, confidence=1.0, model="heuris
     decisions.insert_one(log)
 ###############################################################################
 ### --- App Config ---####
-st.set_page_config(page_title="Smart Energy Usage Optimiser", layout="wide")
-st.title("🔋Smart Energy Usage Optimiser")
+st.set_page_config(page_title="Smart Energy Optimiser", layout="wide")
+st.title("🔋Smart Energy Optimiser")
 
 ########## --- Main App Execution Function ---################################
 def main():
