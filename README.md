@@ -1,10 +1,10 @@
 
-# 🔋 Smart Energy Usage Optimiser for Renewable Systems  
+# Smart Energy Usage Optimiser for Renewable Systems  
 **A weather-aware, AI-assisted advisor for optimizing solar energy usage in off-grid and smart homes.**
 
 ---
 
-## 🚀 Overview
+## Overview
 
 The Smart Energy Usage Optimiser is an interactive, cloud-native web application designed to empower households operating on solar and off-grid energy systems. By leveraging real-time weather forecasts, dynamic solar irradiance modeling, battery charge state estimation, and customizable appliance load profiles, the system delivers actionable recommendations to maximize energy efficiency and sustainability.
 
@@ -12,20 +12,19 @@ Built on a scalable architecture utilizing MongoDB Atlas and Streamlit, this pro
 
 ---
 
-## 🎯 Key Features
+## Key Features
 
-- 🌤 **Live Weather Forecasting** via OpenWeatherMap API with caching and error handling  
-- 🔆 **Solar Irradiance Simulation** calibrated for geospatial parameters  
-- 🔋 **Battery State-of-Charge Modeling** with dynamic load forecasting  
-- ⚙️ **User-Configurable Appliance Profiles** supporting real-time consumption metrics  
-- 🧠 **Rule-Based AI Inference Engine** for load prioritization and energy rationalization  
-- 📈 **Comprehensive Telemetry Logging** into MongoDB Atlas for analytics and audit trails  
-- 📊 **Time-Series Data Visualization** (integration via MongoDB Charts)  
-- ☁️ Fully compatible with cloud deployment and IoT/Smart Grid ecosystem integration  
+-  **Live Weather Forecasting** via OpenWeatherMap API with caching and error handling  
+-  **Solar Irradiance Simulation** calibrated for geospatial parameters  
+-  **Battery State-of-Charge Modeling** with dynamic load forecasting  
+-  **User-Configurable Appliance Profiles** supporting real-time consumption metrics  
+-  **Comprehensive Telemetry Logging** into MongoDB Atlas for analytics and audit trails  
+-  **Time-Series Data Visualization** (integration via MongoDB Charts)  
+-  Fully compatible with cloud deployment and IoT/Smart Grid ecosystem integration  
 
 ---
 
-## 🧩 System Architecture
+##  System Architecture
 
 ```text
 User Input (Streamlit UI)
@@ -50,7 +49,7 @@ Dashboard Display & User Advisory
 
 ---
 
-## ⚙️ Tech Stack
+## Tech Stack
 
 | Layer           | Technology                         |
 |----------------|-------------------------------------|
@@ -63,7 +62,7 @@ Dashboard Display & User Advisory
 
 ---
 
-## 🛠️ Setup Instructions
+##  Setup Instructions
 
 ### 1. Clone the repository
 
@@ -97,7 +96,7 @@ streamlit run app.py
 
 ---
 
-## 📊 MongoDB Collections
+## MongoDB Collections
 
 | Collection             | Description                                      |
 |------------------------|--------------------------------------------------|
@@ -109,7 +108,7 @@ Supports time-series data operations for predictive analytics and load trend vis
 
 ---
 
-## 🧠 AI & Decision Support
+## AI & Decision Support
 
 The current engine uses a rule-based inference mechanism to assess:
 
@@ -122,7 +121,7 @@ The current engine uses a rule-based inference mechanism to assess:
 
 ---
 
-## 🧰 Architecture Diagram
+## Architecture Diagram
 
 ![System Architecture](s.png)
 
@@ -130,7 +129,7 @@ _This diagram illustrates the modular pipeline from data ingestion, modeling, in
 
 ---
 
-## 💡 Use Cases
+## Use Cases
 
 Renewable-powered smart homes
 
@@ -144,7 +143,7 @@ Energy advisory platforms for emerging markets
 
 ---
 
-📌 Roadmap & Future Enhancements
+## Roadmap & Future Enhancements
  Integrate ML-driven predictive load balancing
 
  Historical data visualization dashboards
@@ -157,7 +156,7 @@ Energy advisory platforms for emerging markets
 
 ---
 
-## 🙌 Acknowledgements
+## Acknowledgements
 
 OpenWeatherMap – Weather API provider
 MongoDB Atlas – Cloud database platform
@@ -166,20 +165,20 @@ GitLab – CI/CD and repository management platform
 Google Cloud Hackathon Team – Inspiration and collaboration
 ---
 
-## 🛡 Security & Data Privacy
+## Security & Data Privacy
 
 Sensitive credentials managed securely via .streamlit/secrets.toml
 No personally identifiable information collected or stored
 MongoDB Atlas access controlled by role-based permissions and IP whitelisting
 ---
 
-## 🏁 License
+## License
 
 MIT License. See `LICENSE` file for more details.
 
 ---
 
-## 📬 Contact
+## Contact
 
 **Adewale Ogabi**  
 [LinkedIn](https://www.linkedin.com/in/ogabiadewale/) · [Email](ogabi.adewale@gmail.com)
