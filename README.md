@@ -1,5 +1,5 @@
 
-# Smart Energy Usage Optimiser for Renewable Systems  
+# Smart Energy Optimiser for Renewable Systems  
 **A weather-aware, AI-assisted advisor for optimizing solar energy usage in off-grid and smart homes.**
 
 ---
