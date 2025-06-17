@@ -177,41 +177,49 @@ def main():
         st.metric("Projected Battery + Solar Energy", f"{total_available_energy:.2f} kWh")
         st.metric("Energy After Usage", f"{remaining_energy:.2f} kWh")
 
-    # ---- Section 3: Advisory Engine ----
+# ---- Section 3: Advisory Engine ----
     st.subheader("🧠 Smart Advisory")
-    st.caption("🔌You will get an intelligent advice based on Forecast")
+    st.caption("🔌 You will get an intelligent advice based on Forecast")
+    
+    # 👉 Move location selector OUTSIDE conditional block to always define location_param
+    st.sidebar.caption("📍 Weather Forecast Location")
+    cities_df = load_cities()
+    city_options = cities_df["display_name"].tolist()
+    default_city = "Middlesbrough, GB"
+    selected_city = st.sidebar.selectbox(
+        "Select Location (City, Country):",
+        options=city_options,
+        index=city_options.index(default_city) if default_city in city_options else 0
+    )
+    city, country = selected_city.split(", ")
+    location_param = f"{city},{country}"
+    
+    # ✅ Weather fetch now happens outside too — ensures consistent weather_data access
+    weather_data_raw = fetch_weather(location_param, st.secrets["openweathermap"]["api_key"])
+    weather_data = {}
+    if weather_data_raw:
+        weather_data = {
+            "Temperature (°C)": weather_data_raw['main']['temp'],
+            "Humidity (%)": weather_data_raw['main']['humidity'],
+            "Cloud Cover (%)": weather_data_raw['clouds']['all'],
+            "Solar Irradiance (Est) W/m²": max(0, (100 - weather_data_raw['clouds']['all']) * 10)
+        }
+        for k, v in weather_data.items():
+            st.sidebar.metric(label=k, value=v)
+    
+    # 💡 Smart advisory logic follows now
     if remaining_energy < 0:
-        st.warning("⚠️Energy Deficit Detected! Reduce load or reschedule usage to peak solar hours.")
+        st.warning("⚠️ Energy Deficit Detected! Reduce load or reschedule usage to peak solar hours.")
         high_consumers = sorted(selected_appliances.items(), key=lambda x: x[1]['watt'], reverse=True)
         st.subheader("Suggested Load Rationalization:")
         for item, data in high_consumers[:3]:
             st.write(f"• Consider reducing hours for **{item}** ({data['watt']}W)")
     else:
-        st.success("✅Energy is sufficient for today's usage pattern.")
+        st.success("✅ Energy is sufficient for today's usage pattern.")
         if remaining_energy > 1:
-            st.info("🔋You have surplus energy. Consider running optional appliances or charging devices during the day.")
-
-        ########## Load cities and setup selection ############
-        cities_df = load_cities()
-        city_options = cities_df["display_name"].tolist()
-        default_city = "Middlesbrough, GB"
-        selected_city = st.sidebar.selectbox("Select Location (City, Country):",
-                                             options=city_options,
-                                             index=city_options.index(default_city) if default_city in city_options else 0)
-        city, country = selected_city.split(", ")
-        location_param = f"{city},{country}"
-        weather_data_raw = fetch_weather(location_param, st.secrets["openweathermap"]["api_key"])
-        weather_data = {}
-        if weather_data_raw:
-            weather_data = {
-                "Temperature (°C)": weather_data_raw['main']['temp'],
-                "Humidity (%)": weather_data_raw['main']['humidity'],
-                "Cloud Cover (%)": weather_data_raw['clouds']['all'],
-                "Solar Irradiance (Est) W/m²": max(0, (100 - weather_data_raw['clouds']['all']) * 10)
-            }
-            for k, v in weather_data.items():
-                st.sidebar.metric(label=k, value=v)
-
+            st.info("🔋 You have surplus energy. Consider running optional appliances or charging devices during the day.")
+    
+    # ⏱ Ensure MongoDB telemetry collection
     ensure_timeseries_collection()
 
     #### -- Final Decision Logging --########
