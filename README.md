@@ -132,13 +132,9 @@ _This diagram illustrates the modular pipeline from data ingestion, modeling, in
 ## Use Cases
 
 Renewable-powered smart homes
-
 Remote off-grid solar installations
-
 IoT-enabled microgrid energy management
-
 Predictive scheduling for critical household loads
-
 Energy advisory platforms for emerging markets
 
 ---
@@ -157,23 +153,18 @@ Energy advisory platforms for emerging markets
 ---
 
 ## Acknowledgements
-
 OpenWeatherMap – Weather API provider
 MongoDB Atlas – Cloud database platform
 Streamlit – Frontend framework
 GitLab – CI/CD and repository management platform
 Google Cloud Hackathon Team – Inspiration and collaboration
----
 
 ## Security & Data Privacy
-
 Sensitive credentials managed securely via .streamlit/secrets.toml
 No personally identifiable information collected or stored
 MongoDB Atlas access controlled by role-based permissions and IP whitelisting
----
 
 ## License
-
 MIT License. See `LICENSE` file for more details.
 
 ---
