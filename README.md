@@ -67,7 +67,7 @@ Dashboard Display & User Advisory
 ### 1. Clone the repository
 
 ```bash
-git clone https://gitlab.com/yourusername/smart-energy-optimizer.git
+https://gitlab.com/adewaleogabi/smart-energy-optimiser.git
 cd smart-energy-optimizer
 ```
 
