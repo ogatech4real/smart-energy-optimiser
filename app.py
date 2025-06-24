@@ -382,5 +382,18 @@ def main():
     log_environment_data(location_param, weather_data)
 
 st.caption("Smart Energy Usage Optimiser – Leveraging on Google Cloud Solutions")
+st.markdown("An interactive app that helps off-grid and solar-powered homes optimize energy use through real-time forecasts, solar modeling, and intelligent load management: https://shorturl.at/D9JQj")
 if __name__ == "__main__":
     main()
+
+    # Footer Section
+    st.markdown("---")
+    st.markdown(
+        """
+        <div style='text-align: center; font-size: 14px;'>
+            Developed by <strong>Adewale Ogabi</strong> | 
+            <a href='https://www.linkedin.com/in/ogabiadewale' target='_blank'>LinkedIn Profile</a>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
