@@ -10,6 +10,8 @@ The Smart Energy Usage Optimiser is an interactive, cloud-native web application
 
 Built on a scalable architecture utilizing MongoDB Atlas and Streamlit, this prototype exemplifies next-generation decentralized energy management tailored for edge computing environments.
 
+**Click here to preview the app: https://smart-energy-optimiser.streamlit.app/**
+
 ---
 
 ## Key Features
@@ -121,14 +123,6 @@ The current engine uses a rule-based inference mechanism to assess:
 
 ---
 
-## Architecture Diagram
-
-![System Architecture](s.png)
-
-_This diagram illustrates the modular pipeline from data ingestion, modeling, inference, and UI display._
-
----
-
 ## Use Cases
 
 Renewable-powered smart homes
@@ -162,7 +156,7 @@ Google Cloud Hackathon Team – Inspiration and collaboration
 ## Security & Data Privacy
 Sensitive credentials managed securely via .streamlit/secrets.toml
 No personally identifiable information collected or stored
-MongoDB Atlas access controlled by role-based permissions and IP whitelisting
+MongoDB Atlas access is controlled by role-based permissions and IP whitelisting
 
 ## License
 MIT License. See `LICENSE` file for more details.
