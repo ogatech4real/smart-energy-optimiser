@@ -382,7 +382,7 @@ def main():
     log_environment_data(location_param, weather_data)
 
 st.caption("Smart Energy Usage Optimiser – Leveraging on Google Cloud Solutions")
-st.markdown("An interactive app that helps off-grid and solar-powered homes optimize energy use through real-time forecasts, solar modeling, and intelligent load management: https://shorturl.at/D9JQj")
+st.markdown("An interactive app that helps off-grid and solar-powered homes optimize energy use through real-time forecasts, solar modeling, and intelligent load management: https://bit.ly/4evJ6nT")
 if __name__ == "__main__":
     main()
 
