@@ -10,7 +10,9 @@ The Smart Energy Usage Optimiser is an interactive, cloud-native web application
 
 Built on a scalable architecture utilizing MongoDB Atlas and Streamlit, this prototype exemplifies next-generation decentralized energy management tailored for edge computing environments.
 
-**Click here to preview the app: https://smart-energy-optimiser.streamlit.app/**
+**Click here to preview the app:** https://smart-energy-optimiser.streamlit.app/
+
+https://energy-optimizer-api-73741546363.europe-west1.run.app/
 
 ---
 
